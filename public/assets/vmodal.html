@@ -1,0 +1,211 @@
+<style>
+    #form {
+        margin-top: -8px; 
+        
+    }
+</style>
+
+<form id="form1" action="">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label class="purchaseinfo"><span class="aster">* </span> Component</label>
+                <input type="text" class="form-control purchaseselects" id="software-name" name="compname" placeholder="Enter Component name" >
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-2">
+                
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label class="purchaseinfo">Quantity</label>
+                <input type="number" class="form-control purchaseselects" id="software-name" name="software_name" value="1.00" >
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="purchasegrp">
+              <label for="tags" class="purchaseinfo ">Unit of measure</label>
+                <div class=" dropdown-with-icon dropdownalignment">
+                <select class="selectpicker form-control purchaseselects"  data-live-search="true"
+                     placeholder="Select Unit of mesaure ">
+                     <option value="36" > </option>
+                     <option value="36" >Meters </option>
+                     <option value="36" >Kilos</option>
+                        <option value="38" >grams</option>
+                        <option value="36" >MiliGram</option>
+                        <option value="36" >Box</option>
+                        <option value="36" >Piece</option>
+                        <option value="36" >Quantity</option>
+                        <option value="36" >Packet</option>
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+       </div>
+ 
+ <div class="row mb-2">
+    <div class="col-md-12">
+        <!-- <div class="purchasegrp purch-drop"> -->
+        <label for="unitname" class="purchaseinfo mb-1">Apply on variants</label>
+        <div class="purchasegrp">
+            <div class=" dropdown-with-icon dropdownalignment">
+
+                <select class="selectpicker form-control" name="currency" multiple
+                    data-actions-box="true" data-live-search="true" title="Select Apply on variants">
+                    <option value="36" data-subtext="GHS">GHS</option>
+                    <option value="38" data-subtext="MAD">MAD</option>
+                    <option value="41" data-subtext="¢">GHS</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+ 
+<div class="row mb-2">
+    <div class="col-md-12">
+      <label for="tags" class="purchaseinfo"></span>Consumed in operation</label>
+      <div class="purchasegrp">
+          <div class=" dropdown-with-icon dropdownalignment">
+              <select class="selectpicker form-control"  data-live-search="true"
+               placeholder="Select Consumed in operation">
+               <option value="36" > </option>
+               <option value="36" >Scrap copper</option>
+                  
+                  
+                  
+              </select>
+          </div>
+      </div>
+  </div>
+ </div> 
+
+
+
+     <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label class="purchaseinfo">Order</label>
+                <input type="number" class="form-control purchaseselects" id="software-name" name="software_name" value="1.00" >
+            </div>
+        </div>
+    </div>
+     
+ <div class="row mb-3" style="width: 110%;margin-left: -25px;" >
+    <div class="col-md-12 ">
+    <hr class="fileline vendcarline linehr "> 
+    </div>
+</div>
+
+  
+    <div class="row" >
+        <div class="col-md-12 text-end"   style="width: 100%;">
+            <div class="button_su me-2">
+                <button type="button" class="taskclose1" data-bs-dismiss="modal">
+                    <span class="button_text_container ">
+                      CLOSE
+                    </span>
+                </button>
+               </div>
+            
+               
+
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <button type="submit" class=" button_su_inner tasksave1  ms-0 tsk-btn-mr-5 orderclr"><span class="button_text_container ">
+                    SAVE
+                </span></button>
+            </div>
+            </div>
+    </div>
+    
+   </form>
+  
+
+  
+  
+   <script>
+     
+
+    $(document).ready(function () {
+  $('#form1').formValidation({
+      framework: 'bootstrap',
+      fields: {
+            compname: {
+                validators: {
+                    notEmpty: {
+                        message: 'Enter Component name '
+                    }
+                }
+            },
+            qt: {
+              validators: {
+                  notEmpty: {
+                      message: 'Enter quantity'
+                  }
+              }
+           },
+           ut: {
+            validators: {
+                notEmpty: {
+                    message: 'Select Unit of measure'
+                }
+            }
+        }
+          
+      }
+  })
+  .on('success.form.fv', function (e) {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Your form submission logic goes here
+      var form = $(this);
+      var formData = form.serialize();
+
+      // Example AJAX form submission
+      $.ajax({
+          type: 'POST',
+          url: form.attr('action'),
+          data: formData,
+          success: function (response) {
+              // Handle successful form submission
+              console.log(response);
+              toastr.success('Data saved successfully', 'Success');
+              $('#modal_md').modal('hide');
+              setTimeout(function () {
+                  location.reload();
+              }, 800);
+          },
+          error: function (error) {
+              // Handle form submission error
+              console.error(error);
+              toastr.error('An error occurred', 'Error');
+          }
+      });
+  });
+});
+
+
+$(document).ready(function() {
+$("#unit_price").on('keypress keyup blur', function(event) {
+  // Allow backspace, tab, escape, enter and decimal point
+  if (event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 27 || event.keyCode === 13 || event.keyCode === 46) {
+    return true;
+  }
+  // Allow only numbers
+  if ((event.keyCode < 48 || event.keyCode > 57)) {
+    event.preventDefault();
+  }
+  if (event.target.value.indexOf('.') !== -1 && event.target.value.length - event.target.value.indexOf('.') > 3) {
+    event.preventDefault();
+  }
+});
+});
+
+
+</script>

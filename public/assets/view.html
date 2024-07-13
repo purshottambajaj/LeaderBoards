@@ -1,0 +1,159 @@
+<style>
+    #form {
+        margin-top: -8px; 
+        
+    }
+</style>
+<form id="form" action="" <form id="form">
+  
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- striped table -->
+          
+            <div class="row tb-margin">
+                <div class="col-md-12">
+                    <table class="details-table table table-striped">
+                       <tbody>
+                        <tr class="project-overview">
+                            <td><b>Purpose</b></td>
+                            <td >Marketing </td>
+                            <td><b>Meeting With</b></td>
+                            <td >Staff    (James Deckar - 9004)                            </td>
+                        </tr>
+                                <tr class="project-overview">
+                            <td><b>Visitor Name</b></td>
+                            <td>Anderson</td>
+                            <td><b>Phone</b></td>
+                            <td>216511015112</td>
+                        </tr>
+                        <tr class="project-overview">
+                            <td><b>Number Of Person</b></td>
+                            <td>3</td>
+                            <td><b>Date</b></td>
+                            <td>01/25/2024</td>
+                        </tr>
+                        <tr class="project-overview">
+                            <td><b>In Time</b></td>
+                            <td>11:50 AM</td>
+                            <td><b>Out Time</b></td>
+                            <td>12:50 PM</td>
+                        </tr>
+                        <tr class="project-overview">           
+                            <td><b>ID Card</b></td>
+                            <td>3225</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="project-overview">
+                            <td><b>Note</b></td>
+                            <td colspan="3"></td>            
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+        
+        
+        </div>
+    </div>
+
+    
+    
+   </form>
+
+  
+  
+   <script>
+     
+
+     $(document).ready(function () {
+  $('#form').formValidation({
+      framework: 'bootstrap',
+      fields: {
+            bomcode: {
+                validators: {
+                    notEmpty: {
+                        message: 'Enter Bom Code'
+                    }
+                }
+            },
+            Product: {
+              validators: {
+                  notEmpty: {
+                      message: 'Select product'
+                  }
+              }
+           },
+           rt: {
+            validators: {
+                notEmpty: {
+                    message: 'Select Routing'
+                }
+            }
+        }
+          
+      }
+  })
+  .on('success.form.fv', function (e) {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Your form submission logic goes here
+      var form = $(this);
+      var formData = form.serialize();
+
+      // Example AJAX form submission
+      $.ajax({
+          type: 'POST',
+          url: form.attr('action'),
+          data: formData,
+          success: function (response) {
+              // Handle successful form submission
+              console.log(response);
+              toastr.success('Data saved successfully', 'Success');
+              $('#modal_md').modal('hide');
+              setTimeout(function () {
+                  location.reload();
+              }, 800);
+          },
+          error: function (error) {
+              // Handle form submission error
+              console.error(error);
+              toastr.error('An error occurred', 'Error');
+          }
+      });
+  });
+});
+
+
+
+$(document).ready(function() {
+$("#unit_price").on('keypress keyup blur', function(event) {
+  // Allow backspace, tab, escape, enter and decimal point
+  if (event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 27 || event.keyCode === 13 || event.keyCode === 46) {
+    return true;
+  }
+  // Allow only numbers
+  if ((event.keyCode < 48 || event.keyCode > 57)) {
+    event.preventDefault();
+  }
+  if (event.target.value.indexOf('.') !== -1 && event.target.value.length - event.target.value.indexOf('.') > 3) {
+    event.preventDefault();
+  }
+});
+});
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+      $('input[type="radio"]').on("change", function () {
+        if ($("#kit").is(":checked")) {
+          $("#date-selector-div-t1").show();
+        } else {
+          $("#date-selector-div-t1").hide();
+        }
+      });
+    });
+  </script>

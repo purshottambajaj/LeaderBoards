@@ -1,0 +1,330 @@
+<style>
+    #form {
+        margin-top: -8px; 
+        
+    }
+</style>
+<form id="form1" action="">
+    
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <!-- <div class="purchasegrp purch-drop"> -->
+            <label for="unitname" class="purchaseinfo mb-1">Purpose<span class=" aster"> *</span></label>
+            <div class="purchasegrp">
+                <div class=" dropdown-with-icon dropdownalignment">
+
+                    <select class="selectpicker form-control" name="purpose" title="Select purpose">
+                        <option value="Marketing ">Marketing </option>
+                        <option value="Parent Teacher Meeting">Parent Teacher Meeting</option>
+                        <option value="Student Meeting">Student Meeting</option>
+                        <option value="Staff Meeting">Staff Meeting</option>
+                        <option value="Principal Meeting">Principal Meeting</option>
+                        <option value="School Events">School Events</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="purchasegrp purch-drop"> -->
+            <label for="unitname" class="purchaseinfo mb-1">Meeting With<span class=" aster"> *</span></label>
+            <div class="purchasegrp">
+                <div class=" dropdown-with-icon dropdownalignment">
+
+                    <select class="selectpicker form-control" name="met" title="Select Meeting with">
+                        <option value="student">Student</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="purchasegrp purch-drop"> -->
+            <label for="unitname" class="purchaseinfo mb-1">Staff<span class="aster"> *</span></label>
+            <div class="purchasegrp">
+                <div class=" dropdown-with-icon dropdownalignment" name="St">
+
+                    <select class="selectpicker form-control" name="St" title="Select Staff">
+                        
+                            <option value="">Select </option>
+                                                        <option value="1">Joe Black (9000)</option>
+                                                        <option value="2">Shivam Verma (9002)</option>
+                                                        <option value="3" >Brandon Heart (9006)</option>
+                                                        <option value="4">William Abbot (9003)</option>
+                                                        <option value="5">Jason Sharlton (900002301)</option>
+                                                        <option value="6">James Deckar (9004)</option>
+                                                        <option value="7">Maria Ford (9005)</option>
+                                                        <option value="10">Albert Thomas (54545454)</option>
+                                                </select>
+                    </select>
+                </div>
+            </div>
+        </div>
+     </div>
+    
+     <div class="row mb-2">
+        
+        <div class="col-md-4">
+            <!-- <div class="purchasegrp purch-drop"> -->
+            <label for="unitname" class="purchaseinfo">Visitor Name<span class=" aster"> *</span></label>
+            <div class="purchasegrp">
+                <div class=" dropdown-with-icon dropdownalignment">
+                    <input type="text" class="form-control purchaseselects" id="software-name" name="name" placeholder="Enter Visitor Name " >    
+                </div>
+            </div>
+        </div>
+     
+        <div class="col-md-4">
+            <div class="purchasegrp">
+            <label class="purchaseinfo">Phone</label>
+            <input type="text" class="form-control purchaseselects" id="software-name" name="software_name" placeholder="Enter Phone"  >
+          </div>
+        </div>
+     </div>
+        
+   
+                
+        
+        
+       
+ 
+     <div class="row mb-2">
+        <div class="col-md-4">
+            <div class="purchasegrp">
+            <label class="purchaseinfo">ID Card</label>
+            <input type="text" class="form-control purchaseselects" id="ID Card" name="ID Card" placeholder="Enter ID Card" >
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="purchasegrp">
+            <label class="purchaseinfo">Number Of Person</label>
+            <input type="text" class="form-control purchaseselects" id="nop" name="nop" placeholder="Enter Number Of Person ">
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="purchasegrp">
+                <label class="purchaseinfo">Date<span class=" aster"> *</span></label>
+                <input type="date" id="st_date" name="st_date"
+                    class="form-control purchaseselects " />
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <div class="purchasegrp">
+              <label class="purchaseinfo">In Time:</label>
+              <div class="input-group">
+                <input type="text" id="st_time" name="st_time" class="form-control purchaseselects" placeholder="Click to select time" style="width: 80%;">
+                
+            
+                  <span class="form-control purchaseselect" style="padding-right: 10px;">
+                    <i class="fa fa-clock-o" ></i>
+                  </span>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="purchasegrp">
+              <label class="purchaseinfo">Out Time:</label>
+              <div class="input-group">
+                <input type="text" id="st_time2" name="st_time2" class="form-control purchaseselects" placeholder="Click to select time" style="width: 80%;">
+                
+            
+                  <span class="form-control purchaseselect" style="padding-right: 10px;">
+                    <i class="fa fa-clock-o" ></i>
+                  </span>
+                
+              </div>
+            </div>
+          </div>   
+       
+          <div class="col-md-4 "> 
+            <div class=" excfnthr">
+                <label for="" class="excfllbl"><span class="aster">* </span>Choose CSV File</label>
+                <div class="input-group d-flex flex-nowrap">
+                    <input type="file" class="chooseexcfle">
+               </div>
+           </div>
+           </div>
+    </div>
+
+
+                        
+          
+ 
+ 
+<div class="row mb-2">
+    <div class="col-md-12">
+      <label for="tags" class="purchaseinfo"></span>Note</label>
+      <div class="purchasegrp">
+          <div class=" dropdown-with-icon dropdownalignment">
+            <textarea class="textdesc  " rows="4" placeholder="Enter some Notes"></textarea>
+          </div>
+      </div>
+  </div>
+ </div> 
+
+     
+    <div class="row mb-3" style="width: 110%;margin-left: -25px;" >
+        <div class="col-md-12 ">
+        <hr class="fileline vendcarline linehr "> 
+        </div>
+    </div>
+    
+
+  
+    <div class="row" >
+        <div class="col-md-12 text-end"   style="width: 100%;">
+            
+               
+
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <button type="submit" class=" button_su_inner tasksave1  ms-0 tsk-btn-mr-5 orderclr"><span class="button_text_container ">
+                    SAVE
+                </span></button>
+            </div>
+            </div>
+    </div>  
+    
+   </form>
+  
+
+
+   <script>
+     
+
+    $(document).ready(function () {
+  $('#form1').formValidation({
+      framework: 'bootstrap',
+      fields: {
+        purpose: {
+                validators: {
+                    notEmpty: {
+                        message: 'Select purpose'
+                    }
+                }
+            },
+          met: {
+              validators: {
+                  notEmpty: {
+                      message: 'Select Meeting with'
+                  }
+              }
+           },
+           
+        St: {
+            validators: {
+                notEmpty: {
+                    message: 'Select Staff'
+                }
+            }
+        },
+        name: {
+            validators: {
+                notEmpty: {
+                    message: 'Enter Visitor Name '
+                }
+            }
+        } ,
+         st_date: {
+            validators: {
+                notEmpty: {
+                    message: 'Enter Current date'
+                }
+            }
+        },
+          
+      }
+  })
+  .on('success.form.fv', function (e) {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Your form submission logic goes here
+      var form = $(this);
+      var formData = form.serialize();
+
+      // Example AJAX form submission
+      $.ajax({
+          type: 'POST',
+          url: form.attr('action'),
+          data: formData,
+          success: function (response) {
+              // Handle successful form submission
+              console.log(response);
+              toastr.success('Data saved successfully', 'Success');
+              $('#modal_md').modal('hide');
+              setTimeout(function () {
+                  location.reload();
+              }, 800);
+          },
+          error: function (error) {
+              // Handle form submission error
+              console.error(error);
+              toastr.error('An error occurred', 'Error');
+          }
+      });
+  });
+});
+
+
+$(document).ready(function() {
+$("#unit_price").on('keypress keyup blur', function(event) {
+  // Allow backspace, tab, escape, enter and decimal point
+  if (event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 27 || event.keyCode === 13 || event.keyCode === 46) {
+    return true;
+  }
+  // Allow only numbers
+  if ((event.keyCode < 48 || event.keyCode > 57)) {
+    event.preventDefault();
+  }
+  if (event.target.value.indexOf('.') !== -1 && event.target.value.length - event.target.value.indexOf('.') > 3) {
+    event.preventDefault();
+  }
+});
+});
+
+
+</script>
+
+
+   <script>
+    document.getElementById('st_date').addEventListener('click', () =>
+    {
+        if ('showPicker' in HTMLInputElement.prototype)
+        {
+            document.getElementById('st_date').showPicker();
+        }
+    })
+</script>
+ <!--time picker-->
+ <script>
+    $(document).ready(function() {
+      $("#st_time").click(function() {
+        $(this).timepicker({
+          timeFormat: 'HH:mm:ss', // Customize time format (optional)
+          modal: true // Prevent modal behavior (optional)
+        });
+        $(this).timepicker('show'); // Show the timepicker immediately on click
+      });
+    });
+    </script>
+     <script>
+    $(document).ready(function() {
+      $("#st_time2").click(function() {
+        $(this).timepicker({
+          timeFormat: 'HH:mm:ss', // Customize time format (optional)
+          modal: true // Prevent modal behavior (optional)
+        });
+        $(this).timepicker('show'); // Show the timepicker immediately on click
+      });
+    });
+    </script>
+  
